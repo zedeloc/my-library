@@ -1,4 +1,320 @@
-header{
+/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the line height in all browsers.
+3. Prevent adjustments of font size after orientation changes in iOS.
+4. Use a more readable tab size (opinionated).
+*/
+
+html {
+	font-family:
+		system-ui,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji'; /* 1 */
+	line-height: 1.15; /* 2 */
+	-webkit-text-size-adjust: 100%; /* 3 */
+	tab-size: 4; /* 4 */
+}
+
+/*
+Sections
+========
+*/
+
+/**
+Remove the margin in all browsers.
+*/
+
+body {
+	margin: 0;
+}
+
+/*
+Text-level semantics
+====================
+*/
+
+/**
+Add the correct font weight in Chrome and Safari.
+*/
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+	font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+Correct table border color inheritance in Chrome and Safari. (https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+	border-color: currentcolor;
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
+	padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+	display: list-item;
+}
+
+* {
+    font-size: 16px;
+}
+
+:root {
+    --tyrianpurple: #701442;
+    --paynesgrey: rgb(79, 109, 122);
+    --roseybrown: #cf9893;
+    --puce: #bc7c9c;
+    --columbiablue: #c0d6df;
+    --cinereous: #9f8082;
+    --shamrockgreen: #499f68;
+    --cerulean: #007ea7;
+
+
+
+
+    --standard-box-shadow: 0px 0px 8px 0px black;
+
+}
+
+body {
+    background-color: var(--paynesgrey);
+}
+
+header {
     background-color: rgb(112, 20, 66);
     color: white;
+    padding: 1rem;
+    box-shadow: var(--standard-box-shadow)
+    /* align-self: stretch;
+    flex-grow: 1; */
+
+}
+
+.logo {
+    font-size: 24px;
+}
+
+
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.shelf {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    padding: .5rem;
+    background-color: var(--puce);    
+    margin-top: 4rem;
+    border: solid 2px #701442;
+    border-radius: .5rem;
+    box-shadow: var(--standard-box-shadow);
+
+    display: grid;
+    grid-template-rows: 120px;
+    grid-auto-rows: 3rem;
+    gap: .5rem;
+}
+
+.submit-new {
+    background-color: var(--columbiablue);
+    border-radius: 1rem;
+    padding: .5rem;
+    height: fit-content;
+}
+
+.submit-new > form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    gap: .5rem;
+}
+
+.book {
+    border-radius: 1rem;
+    background-color: var(--columbiablue);
+}
+
+input {
+    background-color: var(--cerulean);
+    color: white;
+    padding: .25rem;
+    padding-left: .5rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 14px;
+}
+
+button {
+    padding: .25rem;
+    border: none;
+    border-radius: 1rem;
 }
