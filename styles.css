@@ -281,7 +281,7 @@ header {
 
     display: grid;
     grid-template-rows: 120px;
-    grid-auto-rows: 3rem;
+    grid-auto-rows: 4rem;
     gap: .5rem;
 }
 
@@ -301,6 +301,12 @@ header {
 .book {
     border-radius: 1rem;
     background-color: var(--columbiablue);
+    padding: .5rem;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2rem 2rem;
 }
 
 input {
@@ -314,7 +320,12 @@ input {
 }
 
 button {
+    grid-column: 3 / 5;
     padding: .25rem;
     border: none;
     border-radius: 1rem;
+}
+
+select {
+    z-index: 1;
 }
