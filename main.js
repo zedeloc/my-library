@@ -1,5 +1,3 @@
-console.log("Hello, world!")
-
 const myLibrary = [];
 
 function Book(title, author, pages, genre, read) {
@@ -33,7 +31,6 @@ function clearForm() {
     newAuthor.value = "";
     newPages.value = "";
     newGenre.value = "";
-    // newRead.value = "";
 }
 
 // List books in order from newest to oldest
@@ -51,6 +48,7 @@ function clearShelf() {
 }
 
 function printBook(currentBook) {
+    // create html for the book
     let book = document.createElement("div");
     book.classList.add("book", "grid_item");
     let title = document.createElement("div")
@@ -70,7 +68,7 @@ function printBook(currentBook) {
     let readButtonInstructions = document.createElement('span');
     readButtonInstructions.classList.add("read-instructions")
     
- 
+    // save unique id
     const id = currentBook.id;
 
     deleteButton.addEventListener("click", () => {
@@ -91,7 +89,7 @@ function printBook(currentBook) {
         stockShelf()
     })
 
-
+    // Load content onto page
     title.textContent = "Title: " + currentBook.title;
     author.textContent = "Author: " + currentBook.author;
     genre.textContent = "Genre: " + currentBook.genre;
@@ -117,8 +115,10 @@ function findBookById(id) {
     return myLibrary.findIndex(book => book.id === id);
 }
 
+// Test book
 let book1 = new Book("Alice's Adventures in Wonderland", "Lewis Carroll", "70", "portal fantasy", "true");
 
+// Get the form elements and data
 let newTitle = document.querySelector("#title");
 let newAuthor = document.querySelector("#author");
 let newPages = document.querySelector("#pages");
@@ -129,6 +129,7 @@ let bookShelf = document.querySelector(".shelf");
 let addNewBookButton = document.querySelector(".add-new-book-button")
 let submitNew = document.querySelector(".submit-new")
 
+// Toggle "add new book" button and form
 addNewBookButton.addEventListener("click", () => {
     submitNew.style.display = "grid";
     addNewBookButton.style.display = 'none';
