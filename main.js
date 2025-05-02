@@ -37,10 +37,16 @@ function clearForm() {
 }
 
 function stockShelf() {
-    for (item of myLibrary) {
-        printBook(item)
+    for (i = myLibrary.length - 1; i >= 0; i--) {
+        printBook(myLibrary[i])
     }
 }
+
+// function stockShelf() {
+//     for (item of myLibrary) {
+//         printBook(item)
+//     }
+// }
 
 function clearShelf() {
     let allBooks = bookShelf.querySelectorAll(".book")
@@ -51,19 +57,19 @@ function clearShelf() {
 
 function printBook(currentBook) {
     let book = document.createElement("div");
-    book.className = "book";
+    book.classList.add("book", "grid_item");
     let title = document.createElement("div")
-    title.className = "title";
+    title.classList.add("title", "grid_item")
     let author = document.createElement("div");
-    author.className = "author";
+    author.classList.add("author", "grid_item")
     let genre = document.createElement("div");
-    genre.className = "genre";
+    genre.classList.add("genre", "grid_item")
     let pages = document.createElement("div");
-    pages.className = "pages";
+    pages.classList.add("pages", "grid_item")
     let read = document.createElement("div");
-    read.className = "read";
+    read.classList.add("read", "grid_item")
     let deleteButton = document.createElement("span");
-    deleteButton.classList.add("material-icons", "md-24")
+    deleteButton.classList.add("material-icons", "md-24", "delete-button")
  
     
 
@@ -105,12 +111,21 @@ let newGenre = document.querySelector("#genre");
 let newRead = document.querySelector("#read");
 let submitButton = document.querySelector("#submit-button");
 let bookShelf = document.querySelector(".shelf");
+let addNewBookButton = document.querySelector(".add-new-book-button")
+let submitNew = document.querySelector(".submit-new")
+
+addNewBookButton.addEventListener("click", () => {
+    submitNew.style.display = "grid";
+    addNewBookButton.style.display = 'none';
+})
 
 submitButton.addEventListener("click", () => {
     addBookToLibrary()
     clearForm()
     clearShelf()
     stockShelf()
+    submitNew.style.display = "none";
+    addNewBookButton.style.display = "block"
 
 })
 

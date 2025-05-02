@@ -238,7 +238,7 @@ summary {
 
 
 
-
+    --hover-shadow: 0px 0px 8px 0px rgb(76, 76, 255);
     --standard-box-shadow: 0px 0px 8px 0px black;
 
 }
@@ -248,6 +248,9 @@ body {
 }
 
 header {
+    z-index: 2;
+    position: sticky;
+    top: 0;
     background-color: rgb(112, 20, 66);
     color: white;
     padding: 1rem;
@@ -261,6 +264,10 @@ header {
     font-size: 24px;
 }
 
+.logo:hover {
+    color: whitesmoke;
+}
+
 
 
 .container {
@@ -272,6 +279,7 @@ header {
 .shelf {
     margin-left: 8rem;
     margin-right: 8rem;
+    margin-bottom: 4rem;
     padding: .5rem;
     background-color: var(--puce);    
     margin-top: 4rem;
@@ -281,15 +289,30 @@ header {
 
     display: grid;
     grid-template-rows: 120px;
-    grid-auto-rows: 4rem;
+    grid-auto-rows: fit-content;
     gap: .5rem;
 }
 
 .submit-new {
+    display: none;
     background-color: var(--columbiablue);
     border-radius: 1rem;
     padding: .5rem;
     height: fit-content;
+}
+
+.add-new-book-button {
+    background-color: var(--columbiablue);
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 48px;
+    padding: 30px;
+    color: var(--tyrianpurple);
+
+}
+
+.add-new-book-button:hover {
+    background-color: #d4e9f2;
 }
 
 .submit-new > form {
@@ -302,6 +325,7 @@ header {
     border-radius: 1rem;
     background-color: var(--columbiablue);
     padding: .5rem;
+    height: fit-content;
 
 
     display: grid;
@@ -326,6 +350,30 @@ button {
     border-radius: 1rem;
 }
 
+.delete-button {
+    cursor: pointer;
+    text-align: center;
+    padding-top: 4px;
+}
+
 select {
     z-index: 1;
+}
+
+.grid_item {
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+    padding: 4px;
+}
+
+.genre {
+    border-right: none;
+}
+
+.pages {
+    border-bottom: none;
+}
+
+.read {
+    border-bottom: none;
 }
