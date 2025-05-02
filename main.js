@@ -36,17 +36,12 @@ function clearForm() {
     // newRead.value = "";
 }
 
+// List books in order from newest to oldest
 function stockShelf() {
     for (i = myLibrary.length - 1; i >= 0; i--) {
         printBook(myLibrary[i])
     }
 }
-
-// function stockShelf() {
-//     for (item of myLibrary) {
-//         printBook(item)
-//     }
-// }
 
 function clearShelf() {
     let allBooks = bookShelf.querySelectorAll(".book")
@@ -68,26 +63,46 @@ function printBook(currentBook) {
     pages.classList.add("pages", "grid_item")
     let read = document.createElement("div");
     read.classList.add("read", "grid_item")
+    let readButton = document.createElement("button")
+    readButton.classList.add("read-toggle");
     let deleteButton = document.createElement("span");
     deleteButton.classList.add("material-icons", "md-24", "delete-button")
- 
+    let readButtonInstructions = document.createElement('span');
+    readButtonInstructions.classList.add("read-instructions")
     
+ 
+    const id = currentBook.id;
 
     deleteButton.addEventListener("click", () => {
-        const id = currentBook.id;
+
         myLibrary.splice(findBookById(id), 1);
         book.remove()
 
     })
 
+    readButton.addEventListener("click", () => {
+        bookIndex = findBookById(id)
+        if (myLibrary[bookIndex]["read"] === "true") {
+            myLibrary[bookIndex]["read"] = "false";
+        } else {
+            myLibrary[bookIndex]["read"] = "true";
+        }
+        clearShelf()
+        stockShelf()
+    })
 
-    title.textContent = currentBook.title;
+
+    title.textContent = "Title: " + currentBook.title;
     author.textContent = "Author: " + currentBook.author;
     genre.textContent = "Genre: " + currentBook.genre;
     pages.textContent = "Pages: " + currentBook.pages;
-    read.textContent = "Read: " + currentBook.read;
+    read.textContent = "Read: "
+    readButton.textContent = currentBook.read;
+    readButtonInstructions.textContent = "<-- click to change"
     deleteButton.textContent = "delete_forever";
 
+    read.appendChild(readButton);
+    read.appendChild(readButtonInstructions);
     book.appendChild(title);
     book.appendChild(author);
     book.appendChild(genre);

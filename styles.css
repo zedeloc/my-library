@@ -277,6 +277,7 @@ header {
 }
 
 .shelf {
+    min-width: 830px;
     margin-left: 8rem;
     margin-right: 8rem;
     margin-bottom: 4rem;
@@ -376,4 +377,13 @@ select {
 
 .read {
     border-bottom: none;
+}
+
+.read-toggle {
+    background-color: var(--cerulean);
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 4px;
+    margin-right: 4px;
 }
