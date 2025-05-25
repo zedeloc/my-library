@@ -1,17 +1,19 @@
 const myLibrary = [];
 
-function Book(title, author, pages, genre, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.genre = genre;
-    this.read = read;
-    this.id = crypto.randomUUID();
-    this.shortDescription = function () {
+class Book {
+    constructor(title, author, pages, genre, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.genre = genre;
+        this.read = read;
+}
+    id = crypto.randomUUID();
+    shortDescription() {
         return `${this.title} is a ${this.genre} book by ${this.author}. It contains ${this.pages} pages and you ${this.isRead()}`;
     }
 
-    this. isRead = function () {
+    isRead() {
         if (this.read === "true") {
             return "have already read it.";
         } else {

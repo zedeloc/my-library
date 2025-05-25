@@ -236,8 +236,6 @@ summary {
     --shamrockgreen: #499f68;
     --cerulean: #007ea7;
 
-
-
     --hover-shadow: 0px 0px 8px 0px rgb(76, 76, 255);
     --standard-box-shadow: 0px 0px 8px 0px black;
 
@@ -267,8 +265,6 @@ header {
 .logo:hover {
     color: whitesmoke;
 }
-
-
 
 .container {
 
